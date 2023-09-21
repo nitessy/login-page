@@ -9,6 +9,8 @@ function App() {
 
   const [enteredPassword, setEnteredPassword] = useState('')
   const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
+  const [showPass, setShowPass] = useState(false)
+  const handleShow = () =>{setShowPass(!showPass)};
 
 
 
@@ -64,13 +66,14 @@ setEnteredPasswordTouched(false)
         type='email' pattern='[a-z0-9\W]+' id='email' onChange={emailHandler} onBlur={emailBlurHandler} value={enteredEmail}
          
         ></input>
-        {enteredEmailIsInValid && (<p> Enter Valid Email</p>)}
+        {enteredEmailIsInValid && (<p className='warn'> Enter Valid Email</p>)}
       
-        <label htmlFor='password' >password</label>
+        <label htmlFor='password' >Password</label>
         <input
-        type='password' id='email' onChange={passwordHandler} onBlur={passwordBlurHandler} value={enteredPassword}
+        type={showPass?"text": "password"} id='email' onChange={passwordHandler} onBlur={passwordBlurHandler} value={enteredPassword}
         ></input>
-        {enteredPasswordIsInValid && (<p> Enter Valid password</p>)}
+        <p onClick={handleShow} className='show'> Show password </p>
+        {enteredPasswordIsInValid && (<p className='warn'> Enter Valid password</p>)}
       </div>
       <div className='form-actions'>
         <button> Submit</button>

@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;700&family=Rubik+Wet+Paint&display=swap');
 
+  *{
+    font-family: 'Montserrat', sans-serif;
+  }
 .App-logo {
   height: 40vmin;
   pointer-events: none;

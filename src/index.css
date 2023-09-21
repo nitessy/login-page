@@ -2,7 +2,11 @@ body{
   margin: 0;
   background-color: black;
 }
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;700&family=Rubik+Wet+Paint&display=swap');
 
+  *{
+    font-family: 'Montserrat', sans-serif;
+  }
 .app{
   width: 90%;
   max-width: 43rem;
@@ -41,7 +45,7 @@ body{
 }
 
 
-p{
+.warn{
   color:red;
   font-size:small;
 }
@@ -61,7 +65,7 @@ button{
     text-align: center;
   }
   button{
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.6rem;
 
   }
   .form-container input{
@@ -73,14 +77,20 @@ button{
     left: 2rem;
     position: relative;
   }
-  p{
+  .warn{
     left: 2rem;
     position: relative;
+  }
+  .show{
+    left: 2rem;
+    position: relative;
+    
   }
   h1{
     font-size: 1.6rem;
   }
-  h2{
+  p{
     font-size: 1.2rem;
+  
   }
 }
