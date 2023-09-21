@@ -4,20 +4,32 @@ import photo from './photo.png'
 import { useState } from 'react';
 
 function App() {
+  var id =  document.getElementsByName("toggle").id;
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
 
   const [enteredPassword, setEnteredPassword] = useState('')
   const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
   const [showPass, setShowPass] = useState(false)
-  const handleShow = () =>{setShowPass(!showPass)};
+  const handleShow = () =>{setShowPass(!showPass);
+    if(id == "1"){
+    document.querySelector('.show').innerHTML = "Show Password";
+    document.getElementsByName("toggle").id=0;
+}
+else{
+  document.querySelector('.show').innerHTML = "Hide Password";
+  document.getElementsByName("toggle").id=1;
+}
+  }
+  ;
+  // document.querySelector('.show').innerHTML = 'Hide Password';
 
 
 
 const enteredEmailIsValid = enteredEmail.includes('@');
 const enteredEmailIsInValid = !enteredEmailIsValid && enteredEmailTouched;
 
-const enteredPasswordIsValid = enteredPassword.trim().length > 5 ;
+const enteredPasswordIsValid = enteredPassword.trim().length > 5;
 const enteredPasswordIsInValid = !enteredPasswordIsValid && enteredPasswordTouched;
 
 let formIsValid = false;
@@ -72,7 +84,7 @@ setEnteredPasswordTouched(false)
         <input
         type={showPass?"text": "password"} id='email' onChange={passwordHandler} onBlur={passwordBlurHandler} value={enteredPassword}
         ></input>
-        <p onClick={handleShow} className='show'> Show password </p>
+        <p  name="toggle" onClick={handleShow} className='show' id='1'> Show password </p>
         {enteredPasswordIsInValid && (<p className='warn'> Enter Valid password</p>)}
       </div>
       <div className='form-actions'>
