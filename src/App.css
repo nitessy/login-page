@@ -54,10 +54,12 @@ h2{
 
 .container{
   margin-top: 5%;
-  height: 360px;
+  /* height: 360px; */
     display: flex;
     max-width: 1300px;
+    padding-top: 1.7rem;
     width: 80%;
+    padding-bottom: 0.5rem;
     border-radius: 5px;
     align-items: center;
     margin-inline: auto;
